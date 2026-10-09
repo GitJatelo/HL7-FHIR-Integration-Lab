@@ -1,0 +1,25 @@
+# Environment files and credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*credentials*.json
+*secrets*.json
+
+# Database files and backups
+*.db
+*.sqlite
+*.bak
+*.sql.gz
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
