@@ -1,0 +1,18 @@
+﻿# Local DICOM files and downloaded studies
+synthetic-dicom/
+retrieved-dicom/
+
+# Python-generated files
+__pycache__/
+*.pyc
+.venv/
+
+# Local configuration and secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Temporary files
+*.log
+*.tmp
