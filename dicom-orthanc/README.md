@@ -57,107 +57,54 @@ The project is intended for learning, technical validation, and portfolio demons
 ### 3.1 DICOM Storage and Retrieval
 
 ```text
-
 Synthetic DICOM Generator
-
-&#x20;         |
-
-&#x20;         v
-
+          |
+          v
 Python DICOM Client
-
-&#x20;         |
-
-&#x20;    C-ECHO / C-STORE
-
-&#x20;         |
-
-&#x20;         v
-
-&#x20;     Orthanc PACS
-
-&#x20;         |
-
-&#x20;    Study Storage
-
-&#x20;         |
-
-&#x20;         v
-
-&#x20; Orthanc Web Interface
-
-&#x20;         |
-
-&#x20;     Study Export
-
-&#x20;         |
-
-&#x20;         v
-
-&#x20; Retrieved DICOM Files
-
-&#x20;         |
-
-&#x20;         v
-
+          |
+          | C-ECHO / C-STORE
+          v
+Orthanc PACS
+          |
+          | Study Storage
+          v
+Orthanc Web Interface
+          |
+          | Study Export
+          v
+Retrieved DICOM Files
+          |
+          v
 Metadata and Pixel Data Verification
-
 ```
-
 ### 3.2 HL7 ORM Imaging Order Integration
 
 ```text
-
 Synthetic HL7 ORM^O01 Order
-
-&#x20;            |
-
-&#x20;            v
-
+             |
+             v
 Mirth Connect TCP Listener
-
-&#x20;       Port 6661
-
-&#x20;            |
-
-&#x20;            v
-
-&#x20;    Source Transformer
-
-&#x20; Extract Accession from OBR-18
-
-&#x20;            |
-
-&#x20;            v
-
-&#x20;     Orthanc REST API
-
-&#x20;      POST /tools/find
-
-&#x20;       HTTP Port 8042
-
-&#x20;            |
-
-&#x20;            v
-
-&#x20; Study Lookup by Accession
-
-&#x20;            |
-
-&#x20;      +-----+------+
-
-&#x20;      |            |
-
-&#x20;      v            v
-
-&#x20;  MATCH FOUND    NO MATCH
-
-&#x20;      |            |
-
-&#x20;      v            v
-
-&#x20;Return Study ID  Return NOT\_FOUND
-
+         Port 6661
+             |
+             v
+HL7 Source Transformer
+  Extract OBR-18 Accession
+             |
+             v
+Orthanc REST API
+  POST /tools/find
+       Port 8042
+             |
+             v
+Study Lookup by Accession
+             |
+       +-----+-----+
+       |           |
+       v           v
+  MATCH FOUND    NO MATCH
+       |           |
+       v           v
+ Return Study ID  Return NOT_FOUND
 ```
 
 The HL7 integration queries existing Orthanc studies. It does not automatically create a DICOM study.
@@ -264,7 +211,7 @@ Extended the ARMC imaging lab with an HL7 v2 `ORM^O01` workflow using **Mirth Co
 
 4\. Orthanc searches for an existing study matching the accession number.
 
-5\. The destination returns the matching study ID or a controlled `NOT\_FOUND` response.
+5\. The destination returns the matching study ID or a controlled `NOT_FOUND` response.
 
 ### 5.2 Verified Integration Tests
 
@@ -274,7 +221,7 @@ Extended the ARMC imaging lab with an HL7 v2 `ORM^O01` workflow using **Mirth Co
 
 | M10D | Dynamic accession lookup | Return matching Orthanc Study ID                       | PASS   |
 
-| M10E | Unknown accession lookup | Controlled `NOT\_FOUND` response                        | PASS   |
+| M10E | Unknown accession lookup | Controlled `NOT_FOUND` response                        | PASS   |
 
 | M10F | Positive regression      | Confirm successful lookup after error-handling changes | PASS   |
 
@@ -284,7 +231,7 @@ Successfully matched accession `ARMC-ACC-1001` to an existing synthetic Orthanc 
 
 **M10E — Negative Accession Lookup**
 
-Confirmed that an unknown accession number produces a controlled `NOT\_FOUND` response without a destination processing error.
+Confirmed that an unknown accession number produces a controlled `NOT_FOUND` response without a destination processing error.
 
 **M10F — Positive Regression Test**
 
@@ -292,9 +239,8 @@ Repeated the successful accession lookup after implementing negative-case handli
 
 ### 5.3 Supporting Documentation
 
-* \[ARMC Imaging MVP Architecture](../docs/ARMC\_Imaging\_MVP\_Architecture.md)
-
-* \[ARMC Imaging MVP Test Results](../docs/ARMC\_Imaging\_MVP\_Test\_Results.md)
+- [ARMC Imaging MVP Architecture](../docs/ARMC_Imaging_MVP_Architecture.md)
+- [ARMC Imaging MVP Test Results](../docs/ARMC_Imaging_MVP_Test_Results.md)
 
 ---
 
