@@ -1,8 +1,8 @@
-\# ARMC Imaging Integration MVP
+# ARMC Imaging Integration MVP
 
 
 
-\## Project Overview
+## Project Overview
 
 
 
@@ -16,25 +16,25 @@ Environment: Local synthetic healthcare interoperability lab
 
 Technologies:
 
-\- HL7 v2 ORM messages
+- HL7 v2 ORM messages
 
-\- NextGen Mirth Connect
+- NextGen Mirth Connect
 
-\- JavaScript
+- JavaScript
 
-\- Orthanc PACS
+- Orthanc PACS
 
-\- DICOM
+- DICOM
 
-\- REST APIs
+- REST APIs
 
-\- Docker
+- Docker
 
-\- PowerShell
+- PowerShell
 
 
 
-\## 1. Project Objective
+## 1. Project Objective
 
 
 
@@ -50,59 +50,59 @@ All patient and imaging data are synthetic.
 
 
 
-\## 2. Verified Architecture
+## 2. Verified Architecture
 
 
 
 Synthetic HL7 ORM Message
 
-&#x20;         |
+          |
 
-&#x20;         v
+          v
 
 Mirth Connect TCP Listener
 
 127.0.0.1:6661
 
-&#x20;         |
+          |
 
-&#x20;         v
+          v
 
 Mirth Source Transformer
 
 Extract imaging accession number from OBR-18
 
-&#x20;         |
+          |
 
-&#x20;         v
+          v
 
-Orthanc\_Study\_Lookup
+Orthanc_Study_Lookup
 
 JavaScript Writer
 
-&#x20;         |
+          |
 
-&#x20;         v
+          v
 
 Orthanc REST API
 
 127.0.0.1:8042
 
-&#x20;         |
+          |
 
-&#x20;         v
+          v
 
 Search for matching DICOM study
 
-&#x20;         |
+          |
 
-&#x20;         v
+          v
 
-Return matching study ID or NOT\_FOUND
+Return matching study ID or NOT_FOUND
 
 
 
-\## 3. Positive Integration Test
+## 3. Positive Integration Test
 
 
 
@@ -140,7 +140,7 @@ Result: PASS
 
 
 
-\## 4. Negative Integration Test
+## 4. Negative Integration Test
 
 
 
@@ -162,7 +162,7 @@ No matching Orthanc study.
 
 Actual Result:
 
-NOT\_FOUND returned without a destination processing error.
+NOT_FOUND returned without a destination processing error.
 
 
 
@@ -170,23 +170,22 @@ Result: PASS
 
 
 
-\## 5. Evidence
+## 5. Evidence
 
 
 
 Positive regression screenshot:
 
-evidence/ARMC\_M10F\_Positive\_Regression\_PASSED.png
-
+[View M10F positive regression evidence](../evidence/ARMC_M10F_Positive_Regression_PASSED.png)
 
 
 Validated channel backup:
 
-ARMC\_HL7\_ORM\_IMAGING\_DEV\_M10E\_Validated\_Backup.xml
+ARMC_HL7_ORM_IMAGING_DEV_M10E_Validated_Backup.xml
 
 
 
-\## 6. Current Limitations
+## 6. Current Limitations
 
 
 
@@ -202,17 +201,17 @@ of an existing DICOM study.
 
 It does not yet demonstrate:
 
-\- Automatic DICOM image creation from an HL7 order
+- Automatic DICOM image creation from an HL7 order
 
-\- Production EHR integration
+- Production EHR integration
 
-\- Production PACS integration
+- Production PACS integration
 
-\- Full radiology workflow management
+- Full radiology workflow management
 
 
 
-\## 7. Project Status
+## 7. Project Status
 
 
 
@@ -224,16 +223,16 @@ M10G: Documentation in progress
 
 
 
-\## 8. Next Development Opportunities
+## 8. Next Development Opportunities
 
 
 
-\- HL7 ORM order validation
+- HL7 ORM order validation
 
-\- Improved negative and duplicate-study handling
+- Improved negative and duplicate-study handling
 
-\- Structured integration logging
+- Structured integration logging
 
-\- Automated regression testing
+- Automated regression testing
 
-\- Healthcare interoperability portfolio demonstration
+- Healthcare interoperability portfolio demonstration
