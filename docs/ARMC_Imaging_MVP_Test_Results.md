@@ -1,4 +1,4 @@
-# ARMC Imaging MVP â€” Integration Test Results
+# ARMC Imaging MVP - Integration Test Results
 
 
 
@@ -28,7 +28,7 @@ Integration Components:
 
 
 
-## Test 1 â€” Positive Accession Lookup
+## Test 1 - Positive Accession Lookup
 
 
 
@@ -86,7 +86,7 @@ Result: PASS
 
 
 
-## Test 2 â€” Negative Accession Lookup
+## Test 2 - Negative Accession Lookup
 
 
 
@@ -116,13 +116,13 @@ accession number is handled without a processing error.
 
 Expected Result:
 
-The Orthanc lookup returns a controlled NOT_FOUND response.
+The Orthanc lookup returns a controlled NOT\_FOUND response.
 
 
 
 Actual Result:
 
-ARMC M10E: NOT_FOUND - No Orthanc study for accession
+ARMC M10E: NOT\_FOUND - No Orthanc study for accession
 
 ARMC-ACC-NOTFOUND-9999
 
@@ -162,13 +162,13 @@ Overall functional regression result: PASS
 
 Positive test:
 
-../evidence/ARMC_M10F_Positive_Regression_PASSED.png
+../evidence/ARMC\_M10F\_Positive\_Regression\_PASSED.png
 
 
 
 Negative test:
 
-../evidence/ARMC_M10E_Negative_Lookup_PASSED.png
+../evidence/ARMC\_M10E\_Negative\_Lookup\_PASSED.png
 
 
 
